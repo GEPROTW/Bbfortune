@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      // 測試期間全面開放，無需帳戶密碼登入
+      allow read, write: if true;
+    }
+  }
+}
